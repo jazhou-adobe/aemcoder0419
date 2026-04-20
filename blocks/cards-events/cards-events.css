@@ -9,9 +9,9 @@
 
 .cards-events > ul > li {
   display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: var(--spacing-m);
-  padding: var(--spacing-m) 0;
+  grid-template-columns: 100px 1fr;
+  gap: 24px;
+  padding: 16px 0;
   border-bottom: 1px solid #dadada;
   background-color: transparent;
 }
@@ -78,7 +78,7 @@
 
 @media (width >= 900px) {
   .cards-events > ul > li {
-    grid-template-columns: 120px 1fr;
-    gap: var(--spacing-l);
+    grid-template-columns: 144px 1fr;
+    gap: 24px;
   }
 }

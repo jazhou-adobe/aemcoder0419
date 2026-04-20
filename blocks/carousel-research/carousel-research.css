@@ -28,8 +28,9 @@
   flex-direction: column;
   position: relative;
   width: 100%;
-  min-height: min(50vw, calc(100dvh - var(--header-height)));
-  background-color: var(--brand-dark);
+  min-height: auto;
+  background-color: var(--background-color);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 10%);
 }
 
 .carousel-research .carousel-research-slide:has(.carousel-research-slide-content[data-align='center']) {
@@ -40,23 +41,28 @@
   align-items: flex-end;
 }
 
+.carousel-research .carousel-research-slide .carousel-research-slide-image {
+  width: 100%;
+  line-height: 0;
+}
+
 .carousel-research .carousel-research-slide .carousel-research-slide-image picture {
-  position: absolute;
-  inset: 0;
+  display: block;
 }
 
 .carousel-research .carousel-research-slide .carousel-research-slide-image picture > img {
-  height: 100%;
   width: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
+  display: block;
 }
 
 .carousel-research .carousel-research-slide .carousel-research-slide-content {
   z-index: 1;
-  margin: var(--spacing-m);
-  padding: var(--spacing-m);
-  color: var(--background-color);
-  background-color: rgb(24 23 22 / 80%);
+  margin: 0;
+  padding: 0 0 16px;
+  color: var(--text-color);
+  background-color: var(--background-color);
   position: relative;
   width: var(--slide-content-width, auto);
   border-radius: 0;
@@ -64,19 +70,19 @@
 
 .carousel-research .carousel-research-slide .carousel-research-slide-content h2,
 .carousel-research .carousel-research-slide .carousel-research-slide-content h3 {
-  color: var(--brand-yellow);
+  color: var(--text-color);
   font-family: var(--heading-font-family);
   font-weight: 700;
   margin-top: 0;
 }
 
 .carousel-research .carousel-research-slide .carousel-research-slide-content p {
-  color: var(--background-color);
+  color: var(--text-color);
   line-height: 1.75;
 }
 
 .carousel-research .carousel-research-slide .carousel-research-slide-content a:any-link {
-  color: var(--background-color);
+  color: var(--link-color);
 }
 
 .carousel-research .carousel-research-slide-indicators {
