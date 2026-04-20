@@ -1,0 +1,31 @@
+{
+  "variantName": "cards-news",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-04-20T03:31:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.unsw.edu.au/",
+    "originPage": "university homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "wide",
+    "purpose": "news-stories",
+    "imagePattern": "large images"
+  },
+  "contentPattern": {
+    "structure": "image + headline + description + link",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": ["latest news stories", "press releases", "blog post teasers", "media highlights"],
+    "notSuitableFor": ["statistics displays", "event calendars", "navigation menus"]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-20T03:31:00.000Z"
+  }
+}

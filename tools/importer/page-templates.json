@@ -1,0 +1,189 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.unsw.edu.au/"
+      ],
+      "description": "University homepage with hero banner, featured content, news, events, and calls to action",
+      "blocks": [
+        {
+          "name": "hero-homepage",
+          "instances": [
+            ".hero-standard.hero-standard--full-width"
+          ]
+        },
+        {
+          "name": "cards-study",
+          "instances": [
+            ".cmp-browse-degrees"
+          ]
+        },
+        {
+          "name": "cards-stats",
+          "instances": [
+            ".icon-tile.uds-component"
+          ]
+        },
+        {
+          "name": "columns-strategy",
+          "instances": [
+            ".shape-bg-colour--primary-yellow"
+          ]
+        },
+        {
+          "name": "cards-events",
+          "instances": [
+            ".keydates"
+          ]
+        },
+        {
+          "name": "carousel-research",
+          "instances": [
+            ".horizontal-scroll"
+          ]
+        },
+        {
+          "name": "cards-feature",
+          "instances": [
+            ".horizontal-scroll"
+          ]
+        },
+        {
+          "name": "cards-news",
+          "instances": [
+            ".latest-stories"
+          ]
+        },
+        {
+          "name": "cards-article",
+          "instances": [
+            ".card-general.unsw-brand-card-theme"
+          ]
+        },
+        {
+          "name": "cards-alumni",
+          "instances": [
+            ".horizontal-scroll"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero Banner",
+          "selector": ".hero-standard.hero-standard--full-width",
+          "style": "dark",
+          "blocks": [
+            "hero-homepage"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Degree Search",
+          "selector": "#degree-search",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "h2:has(strong)",
+            "#degree-search",
+            ".unsw-brand-button-container"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "Study Options",
+          "selector": ".cmp-browse-degrees",
+          "style": null,
+          "blocks": [
+            "cards-study"
+          ],
+          "defaultContent": [
+            "h2"
+          ]
+        },
+        {
+          "id": "section-4",
+          "name": "Rankings Stats",
+          "selector": ".icon-tile.uds-component",
+          "style": null,
+          "blocks": [
+            "cards-stats"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5",
+          "name": "Progress for All",
+          "selector": ".shape-bg-colour--primary-yellow",
+          "style": "yellow",
+          "blocks": [
+            "columns-strategy"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-6",
+          "name": "Key Dates",
+          "selector": ".keydates",
+          "style": null,
+          "blocks": [
+            "cards-events"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-7",
+          "name": "Excellent research, translated",
+          "selector": ".horizontal-scroll",
+          "style": null,
+          "blocks": [
+            "carousel-research"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-8",
+          "name": "Experience UNSW",
+          "selector": ".horizontal-scroll",
+          "style": null,
+          "blocks": [
+            "cards-feature"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-9",
+          "name": "Latest Stories",
+          "selector": ".latest-stories",
+          "style": null,
+          "blocks": [
+            "cards-news"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-10",
+          "name": "Explore a lifetime of learning",
+          "selector": ".card-general.unsw-brand-card-theme",
+          "style": null,
+          "blocks": [
+            "cards-article"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-11",
+          "name": "Alumni",
+          "selector": ".horizontal-scroll",
+          "style": "yellow",
+          "blocks": [
+            "cards-alumni"
+          ],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}

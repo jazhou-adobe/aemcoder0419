@@ -1,0 +1,74 @@
+/* Columns Strategy - Two-column layout, image left, text right */
+.columns-strategy > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns-strategy img {
+  width: 100%;
+  display: block;
+}
+
+.columns-strategy > div > div {
+  order: 1;
+  padding: var(--spacing-l) var(--spacing-m);
+}
+
+.columns-strategy > div > .columns-strategy-img-col {
+  order: 0;
+}
+
+.columns-strategy > div > .columns-strategy-img-col img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.columns-strategy h2,
+.columns-strategy h3 {
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  color: var(--text-color);
+  margin-top: 0;
+}
+
+.columns-strategy p {
+  font-size: var(--body-font-size-m);
+  line-height: 1.75;
+  color: var(--text-color);
+}
+
+.columns-strategy a.button.primary {
+  background-color: var(--brand-yellow);
+  border-color: var(--brand-yellow);
+  color: var(--brand-navy);
+  border-radius: 0;
+  font-family: var(--mono-font-family);
+}
+
+/* Yellow background section variant */
+.section.yellow .columns-strategy > div > div:not(.columns-strategy-img-col) {
+  background-color: var(--brand-yellow-light);
+}
+
+@media (width >= 900px) {
+  .columns-strategy > div {
+    align-items: stretch;
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .columns-strategy > div > div {
+    flex: 1;
+    order: unset;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--spacing-xl) var(--spacing-l);
+  }
+
+  .columns-strategy > div > .columns-strategy-img-col {
+    flex: 1;
+  }
+}

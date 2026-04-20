@@ -1,0 +1,83 @@
+/* Cards Study - 4-column grid of study category cards */
+.cards-study > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-m);
+}
+
+.cards-study > ul > li {
+  background-color: var(--background-color);
+  border-radius: 0;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 10%);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.cards-study > ul > li:hover {
+  box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+}
+
+.cards-study .cards-study-card-image {
+  line-height: 0;
+}
+
+.cards-study > ul > li img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.cards-study .cards-study-card-body {
+  padding: var(--spacing-s);
+}
+
+.cards-study .cards-study-card-body h3,
+.cards-study .cards-study-card-body h4 {
+  margin-top: 0;
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  font-size: var(--heading-font-size-l);
+  color: var(--text-color);
+}
+
+.cards-study .cards-study-card-body ul {
+  list-style: none;
+  margin: var(--spacing-s) 0 0;
+  padding: 0;
+}
+
+.cards-study .cards-study-card-body ul li {
+  padding: var(--spacing-xs) 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cards-study .cards-study-card-body ul li:last-child {
+  border-bottom: none;
+}
+
+.cards-study .cards-study-card-body a:any-link {
+  color: var(--link-color);
+  text-decoration: none;
+  font-size: var(--body-font-size-m);
+}
+
+.cards-study .cards-study-card-body a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+@media (width >= 600px) {
+  .cards-study > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .cards-study > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

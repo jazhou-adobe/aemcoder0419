@@ -1,0 +1,31 @@
+{
+  "variantName": "hero-homepage",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-04-20T03:31:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.unsw.edu.au/",
+    "originPage": "university homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "homepage-hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "heading + paragraph + 1 CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": ["homepage banners", "landing page heroes", "campaign pages"],
+    "notSuitableFor": ["text-only pages", "form pages", "listing pages"]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-20T03:31:00.000Z"
+  }
+}
