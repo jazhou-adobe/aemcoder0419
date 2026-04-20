@@ -24,7 +24,7 @@ footer a:hover {
   color: var(--brand-yellow, #ffdc00);
 }
 
-/* Logo section */
+/* 1. Logo section */
 footer .footer > div:first-child {
   padding-bottom: 24px;
   border-bottom: 1px solid rgb(255 255 255 / 15%);
@@ -35,7 +35,7 @@ footer .footer > div:first-child img {
   height: auto;
 }
 
-/* Navigation columns */
+/* 2. Navigation columns */
 footer .footer > div:nth-child(2) ul {
   list-style: none;
   padding: 0;
@@ -93,24 +93,77 @@ footer .footer > div:nth-child(2) > .default-content-wrapper > ul > li > ul > li
   }
 }
 
-/* Address and legal section */
+/* 3. Partner logos */
 footer .footer > div:nth-child(3) {
+  padding-top: 24px;
+  padding-bottom: 16px;
+  border-top: 1px solid rgb(255 255 255 / 15%);
+  text-align: center;
+}
+
+footer .footer > div:nth-child(3) img {
+  height: 40px;
+  width: auto;
+  margin: 0 16px 8px;
+  opacity: 0.7;
+  vertical-align: middle;
+}
+
+footer .footer > div:nth-child(3) img:hover {
+  opacity: 1;
+}
+
+/* 4. Acknowledgement of Country */
+footer .footer > div:nth-child(4) {
+  padding-top: 24px;
+  padding-bottom: 16px;
+  border-top: 1px solid rgb(255 255 255 / 15%);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+footer .footer > div:nth-child(4) img {
+  height: 24px;
+  width: auto;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+footer .footer > div:nth-child(4) h2 {
+  color: var(--background-color, #fff);
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 700;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+footer .footer > div:nth-child(4) p {
+  color: rgb(255 255 255 / 70%);
+  line-height: 1.6;
+  margin-bottom: 8px;
+  font-size: var(--body-font-size-xs);
+}
+
+/* stylelint-disable no-descending-specificity */
+
+/* 5. Address and legal section */
+footer .footer > div:nth-child(5) {
   padding-top: 24px;
   border-top: 1px solid rgb(255 255 255 / 15%);
 }
 
-footer .footer > div:nth-child(3) p {
+footer .footer > div:nth-child(5) p {
   color: rgb(255 255 255 / 60%);
   line-height: 1.6;
   margin-bottom: 8px;
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
-footer .footer > div:nth-child(3) a {
+footer .footer > div:nth-child(5) a {
   color: rgb(255 255 255 / 60%);
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
-footer .footer > div:nth-child(3) a:hover {
+footer .footer > div:nth-child(5) a:hover {
   color: var(--brand-yellow, #ffdc00);
 }
+
+/* stylelint-enable no-descending-specificity */

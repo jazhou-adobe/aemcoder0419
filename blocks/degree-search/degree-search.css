@@ -1,0 +1,154 @@
+/* Degree Search - matches UNSW degree search section design */
+.degree-search-container {
+  background-color: var(--background-color);
+}
+
+.degree-search {
+  text-align: center;
+  padding: var(--spacing-l) 0 var(--spacing-s);
+}
+
+.degree-search-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Main heading */
+.degree-search-main h2 {
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  font-size: var(--heading-font-size-xl);
+  color: var(--text-color);
+  margin-top: 0;
+  margin-bottom: var(--spacing-xs);
+}
+
+.degree-search-description {
+  color: var(--text-color);
+  font-size: var(--body-font-size-m);
+  line-height: 1.75;
+  margin-bottom: var(--spacing-m);
+}
+
+/* Search bar - mimics original UNSW degree search input */
+.degree-search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e0f2fb;
+  border: 1px solid #e0e0e0;
+  border-radius: 24px;
+  padding: 18px 16px 18px 24px;
+  box-shadow: 0 4px 30px rgb(0 0 0 / 5%);
+  text-decoration: none;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  margin-bottom: var(--spacing-s);
+}
+
+.degree-search-bar:hover {
+  box-shadow: 0 4px 30px rgb(0 0 0 / 12%);
+  border-color: #ccc;
+}
+
+.degree-search-bar-text {
+  font-family: var(--heading-font-family);
+  font-size: 20px;
+  color: #999;
+  text-align: left;
+}
+
+/* Search icon - dark circle with magnifying glass */
+.degree-search-bar-icon {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: var(--brand-dark);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.degree-search-bar-icon::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.degree-search-bar-icon::after {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 23px;
+  width: 2px;
+  height: 8px;
+  background: #fff;
+  transform: rotate(-45deg);
+  transform-origin: top center;
+}
+
+/* View all link - dark color matching original */
+.degree-search-view-all {
+  display: inline-block;
+  color: #333;
+  font-size: var(--body-font-size-m);
+  text-decoration: underline;
+  margin-bottom: var(--spacing-l);
+}
+
+.degree-search-view-all:hover {
+  color: var(--link-hover-color);
+}
+
+/* Journey sub-section */
+.degree-search-journey {
+  padding-top: var(--spacing-m);
+  border-top: 1px solid #eee;
+}
+
+.degree-search-journey h3 {
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  font-size: var(--heading-font-size-l);
+  color: var(--text-color);
+  margin-top: 0;
+  margin-bottom: var(--spacing-xs);
+}
+
+.degree-search-journey p {
+  color: var(--text-color);
+  font-size: var(--body-font-size-m);
+  line-height: 1.75;
+  margin-bottom: var(--spacing-s);
+}
+
+/* Apply now CTA button */
+.degree-search-cta {
+  display: inline-block;
+  font-family: var(--mono-font-family);
+  font-size: var(--button-font-size);
+  padding: var(--button-padding);
+  background-color: var(--brand-yellow);
+  color: var(--brand-navy);
+  text-decoration: none;
+  border-radius: 0;
+  transition: var(--button-transition);
+}
+
+.degree-search-cta:hover {
+  background-color: #e6c600;
+}
+
+@media (width >= 900px) {
+  .degree-search-bar-text {
+    font-size: 22px;
+  }
+
+  .degree-search-main h2 {
+    font-size: var(--heading-font-size-xxl);
+  }
+}

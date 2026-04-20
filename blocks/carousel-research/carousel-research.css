@@ -14,7 +14,8 @@
   display: flex;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  overflow: scroll clip;
+  overflow: auto hidden;
+  gap: 16px;
 }
 
 .carousel-research .carousel-research-slides::-webkit-scrollbar {
@@ -22,12 +23,11 @@
 }
 
 .carousel-research .carousel-research-slide {
-  flex: 0 0 100%;
+  flex: 0 0 calc(100% - 16px);
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 100%;
   min-height: auto;
   background-color: var(--background-color);
   box-shadow: 0 1px 4px rgb(0 0 0 / 10%);
@@ -169,18 +169,18 @@
 }
 
 @media (width >= 600px) {
+  .carousel-research .carousel-research-slide {
+    flex: 0 0 calc(50% - 12px);
+  }
+
   .carousel-research .carousel-research-navigation-buttons {
     left: 24px;
     right: 24px;
   }
+}
 
-  .carousel-research .carousel-research-slide .carousel-research-slide-content {
-    --slide-content-width: calc((100% - 184px) / 2);
-
-    margin: var(--spacing-xl);
-  }
-
-  .carousel-research .carousel-research-slide .carousel-research-slide-content[data-align='justify'] {
-    --slide-content-width: auto;
+@media (width >= 900px) {
+  .carousel-research .carousel-research-slide {
+    flex: 0 0 calc(25% - 12px);
   }
 }

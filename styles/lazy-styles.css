@@ -1,1 +1,27 @@
 /* add global styles that can be loaded post LCP here */
+
+/* Degree search / journey section - centered CTA area */
+/* stylelint-disable no-descending-specificity */
+main .section .default-content-wrapper h2 + p + p a,
+main .section .default-content-wrapper h3 + p a {
+  display: inline-block;
+  font-family: var(--mono-font-family);
+  font-size: var(--button-font-size);
+  padding: var(--button-padding);
+  background-color: var(--brand-yellow);
+  color: var(--brand-navy);
+  text-decoration: none;
+  border-radius: 0;
+  transition: var(--button-transition);
+}
+
+main .section .default-content-wrapper h2 + p + p a:hover,
+main .section .default-content-wrapper h3 + p a:hover {
+  background-color: #e6c600;
+}
+/* stylelint-enable no-descending-specificity */
+
+/* CTA button groups - horizontal layout */
+main .section .default-content-wrapper .button-wrapper + .button-wrapper {
+  display: inline-block;
+}
