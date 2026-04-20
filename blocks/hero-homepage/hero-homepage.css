@@ -1,4 +1,8 @@
-/* Hero Homepage - Full-width dark hero with background image */
+/* Hero Homepage - Full-viewport video/image hero */
+.hero-homepage-container {
+  padding: 0;
+}
+
 .hero-homepage-container .hero-homepage-wrapper {
   max-width: unset;
   padding: 0;
@@ -10,11 +14,42 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 400px;
-  padding: var(--spacing-xl) var(--spacing-m);
+  min-height: 100vh;
+  width: 100%;
+  padding: 120px var(--spacing-m) var(--spacing-xl);
   text-align: center;
   overflow: hidden;
   background-color: var(--brand-dark);
+}
+
+/* YouTube video background */
+.hero-homepage .hero-homepage-video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-homepage .hero-homepage-video::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 40%);
+  z-index: 1;
+}
+
+.hero-homepage .hero-homepage-video iframe,
+.hero-homepage .hero-homepage-video #hero-yt-player {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: 177.78vh;
+  height: 56.25vw;
+  transform: translate(-50%, -50%);
+  border: 0;
 }
 
 .hero-homepage h1 {
@@ -50,10 +85,35 @@
   color: var(--background-color);
 }
 
-.hero-homepage a.button.primary {
-  background-color: var(--brand-yellow);
-  border-color: var(--brand-yellow);
-  color: var(--brand-navy);
+/* CTA button - white filled with arrow, matching original UNSW style */
+.hero-homepage p:last-child a:any-link,
+.hero-homepage .button-container a.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #fff;
+  color: var(--brand-dark, #181716);
+  border: 2px solid transparent;
+  padding: 14px 20px;
+  font-family: var(--button-font-family, 'RobotoMono', monospace);
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.hero-homepage p:last-child a:any-link::after,
+.hero-homepage .button-container a.button::after {
+  content: '\2192';
+  font-size: 18px;
+}
+
+.hero-homepage p:last-child a:any-link:hover,
+.hero-homepage .button-container a.button:hover {
+  background-color: var(--brand-yellow, #ffdc00);
+  border-color: var(--brand-yellow, #ffdc00);
+  color: var(--brand-dark, #181716);
 }
 
 .hero-homepage.no-image {
@@ -68,18 +128,18 @@
   color: var(--text-color);
 }
 
+/* Image background (fallback when no video) */
 .hero-homepage picture {
   position: absolute;
   z-index: 0;
   inset: 0;
 }
 
-/* Overlay: semi-transparent dark, matching UNSW vidOverlay opacity */
 .hero-homepage picture::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgb(68 68 68 / 45%);
+  background: rgb(0 0 0 / 40%);
   z-index: 1;
 }
 
@@ -92,17 +152,4 @@
 .hero-homepage > div {
   position: relative;
   z-index: 2;
-}
-
-@media (width >= 600px) {
-  .hero-homepage {
-    min-height: 480px;
-  }
-}
-
-@media (width >= 900px) {
-  .hero-homepage {
-    min-height: 560px;
-    padding: var(--spacing-xl) 32px;
-  }
 }

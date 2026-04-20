@@ -48,7 +48,7 @@
   --button-transition: background-color 0.2s ease, color 0.2s ease;
 
   /* Nav */
-  --nav-height: 64px;
+  --nav-height: 100px;
 
   /* Focus */
   --focus-outline: 2px solid var(--brand-yellow);
@@ -103,7 +103,7 @@ body.appear {
 }
 
 header {
-  height: var(--nav-height);
+  height: 0;
 }
 
 header .header,

@@ -33,6 +33,12 @@
   box-shadow: 0 1px 4px rgb(0 0 0 / 10%);
 }
 
+/* Cards inherit section background in colored sections */
+.blue .carousel-research .carousel-research-slide {
+  background-color: #e8edf5;
+  box-shadow: none;
+}
+
 .carousel-research .carousel-research-slide:has(.carousel-research-slide-content[data-align='center']) {
   align-items: center;
 }
@@ -66,6 +72,10 @@
   position: relative;
   width: var(--slide-content-width, auto);
   border-radius: 0;
+}
+
+.blue .carousel-research .carousel-research-slide .carousel-research-slide-content {
+  background-color: #e8edf5;
 }
 
 .carousel-research .carousel-research-slide .carousel-research-slide-content h2,

@@ -97,7 +97,7 @@
 /* Desktop: featured left, tiles stacked right */
 @media (width >= 900px) {
   .cards-news .cards-news-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 1fr;
     grid-template-rows: auto auto auto;
   }
 

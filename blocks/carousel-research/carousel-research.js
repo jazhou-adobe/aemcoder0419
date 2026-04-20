@@ -125,6 +125,14 @@ export default function decorate(block) {
     slideIndicatorsNav.append(slideNavButtons);
   }
 
+  // Remove "opens in a new window" link text — these are accessibility markers
+  // from the original site that shouldn't display as visible labels
+  block.querySelectorAll('a').forEach((link) => {
+    if (link.textContent.trim() === 'opens in a new window') {
+      link.closest('p')?.remove();
+    }
+  });
+
   rows.forEach((row, idx) => {
     const slide = createSlide(row, idx, carouselId);
     slide.dataset.aueResource = row.dataset.aueResource;
