@@ -67,6 +67,17 @@ export default async function decorate(block) {
     brandLink.closest('.button-container').className = '';
   }
 
+  // Mark the Contact Us link in tools for special styling (envelope icon)
+  const navTools = nav.querySelector('.nav-tools');
+  if (navTools) {
+    navTools.querySelectorAll('a').forEach((a) => {
+      if (a.textContent.trim().toLowerCase() === 'contact us') {
+        const p = a.closest('p');
+        if (p) p.classList.add('nav-tools-contact');
+      }
+    });
+  }
+
   const navSections = nav.querySelector('.nav-sections');
 
   // hamburger for mobile only

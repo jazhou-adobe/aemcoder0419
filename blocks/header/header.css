@@ -29,7 +29,8 @@ header nav {
     'social social' auto / auto 1fr;
   align-items: center;
   gap: 0;
-  margin: 0;
+  max-width: 1300px;
+  margin: 0 auto;
   font-family: var(--body-font-family);
 }
 
@@ -56,7 +57,7 @@ header nav a:hover {
   color: var(--brand-yellow, #ffdc00);
 }
 
-/* === Row 1: Utility links (tools) - transparent bg === */
+/* === Row 1: Utility links (tools) - dark bg === */
 header nav .nav-tools {
   grid-area: tools;
   display: none;
@@ -64,7 +65,7 @@ header nav .nav-tools {
   align-items: center;
   gap: 24px;
   padding: 12px 32px;
-  background: transparent;
+  background: rgb(0 0 0 / 85%);
 }
 
 header nav .nav-tools .default-content-wrapper {
@@ -88,12 +89,18 @@ header nav .nav-tools a {
 
 /* External link icon after utility links */
 header nav .nav-tools a::after {
-  content: ' ↗';
+  content: ' \2197';
   font-size: 11px;
 }
 
-header nav .nav-tools a:last-child::after {
+/* Contact Us link gets envelope icon instead of arrow */
+header nav .nav-tools .nav-tools-contact a::after {
   content: '';
+}
+
+header nav .nav-tools .nav-tools-contact a::before {
+  content: '\2709 ';
+  font-size: 13px;
 }
 
 /* === Row 2: Main nav bar - white bg === */
@@ -234,7 +241,7 @@ header nav .nav-search {
   display: none;
 }
 
-/* === Social bar (Row 3) - transparent bg === */
+/* === Social bar (Row 3) - dark bg === */
 header nav .nav-social {
   grid-area: social;
   display: none;
@@ -242,7 +249,7 @@ header nav .nav-social {
   align-items: center;
   gap: 12px;
   padding: 10px 32px;
-  background: transparent;
+  background: rgb(0 0 0 / 85%);
   color: #fff;
   font-size: 14px;
   font-weight: 500;

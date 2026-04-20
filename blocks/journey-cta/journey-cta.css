@@ -1,0 +1,58 @@
+/* Journey CTA Block - "Start your UNSW journey" call-to-action */
+.journey-cta {
+  text-align: center;
+  padding: 48px 0;
+}
+
+.journey-cta-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.journey-cta h3 {
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.5;
+  color: var(--text-color);
+  margin: 0 0 8px;
+}
+
+.journey-cta-description {
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  color: var(--text-color);
+  margin: 0 0 24px;
+}
+
+/* Apply now CTA button - yellow pill matching original */
+.journey-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--mono-font-family, monospace);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding: 14px 16px;
+  background-color: var(--brand-yellow, #ffdc00);
+  color: var(--brand-navy, #1a1e2b);
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.journey-cta-button:hover {
+  background-color: #e6c600;
+}
+
+.journey-cta-button svg {
+  flex-shrink: 0;
+}
+
+@media (width >= 900px) {
+  .journey-cta h3 {
+    font-size: 28px;
+  }
+}

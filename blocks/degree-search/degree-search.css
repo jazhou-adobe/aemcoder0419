@@ -199,73 +199,14 @@
   color: var(--link-hover-color);
 }
 
-/* Journey sub-section */
-.degree-search-journey {
-  padding-top: 40px;
-}
-
-.degree-search-journey h3 {
-  font-family: var(--heading-font-family);
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 1.5;
-  color: var(--text-color);
-  margin: 0 0 24px;
-}
-
-/* Apply now CTA button */
-.degree-search-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 16px;
-  font-family: var(--mono-font-family);
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: 1px;
-  padding: 14px 16px;
-  background-color: var(--brand-yellow, #ffdc00);
-  color: var(--brand-navy, #1a1e2b);
-  text-decoration: none;
-  border: 2px solid transparent;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-}
-
-.degree-search-cta:hover {
-  background-color: #e6c600;
-}
-
-.degree-search-cta svg {
-  flex-shrink: 0;
-}
-
 /* Desktop */
 @media (width >= 900px) {
   .degree-search {
     padding: 64px 0 32px;
   }
 
-  .degree-search-inner {
-    display: flex;
-    gap: 48px;
-    align-items: flex-start;
-  }
-
-  .degree-search-main {
-    flex: 1;
-    min-width: 0;
-  }
-
   .degree-search-main h2 {
     font-size: 42px;
-  }
-
-  .degree-search-journey {
-    flex: 0 0 280px;
-    text-align: left;
-  }
-
-  .degree-search-journey h3 {
-    font-size: 28px;
   }
 
   .degree-search-bar input[type="search"] {
