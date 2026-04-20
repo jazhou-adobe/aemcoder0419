@@ -12,6 +12,14 @@ export default function decorate(block) {
     });
     ul.append(li);
   });
+  // Remove standalone "Read more" link paragraphs
+  ul.querySelectorAll('.cards-article-card-body p').forEach((p) => {
+    const link = p.querySelector('a');
+    if (link && p.children.length === 1 && link.textContent.trim().toLowerCase() === 'read more') {
+      p.remove();
+    }
+  });
+
   ul.querySelectorAll('picture > img').forEach((img) => {
     const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
     img.closest('picture').replaceWith(optimizedPic);

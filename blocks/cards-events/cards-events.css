@@ -1,4 +1,4 @@
-/* Cards Events - Key dates vertical list matching UNSW design */
+/* Cards Events - Key dates matching UNSW design */
 .cards-events > ul {
   list-style: none;
   margin: 0;
@@ -9,13 +9,14 @@
 
 .cards-events > ul > li {
   display: grid;
-  grid-template-columns: 100px 1fr;
-  gap: 16px;
+  grid-template-columns: 140px 1fr;
+  gap: 24px;
   align-items: start;
   padding: 16px 0;
   border-bottom: 1px solid #e0e0e0;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 .cards-events > ul > li:first-child {
   padding-top: 0;
 }
@@ -24,20 +25,47 @@
   border-bottom: none;
 }
 
-/* Date cell - yellow background block with stacked date */
+/* Date cell - yellow background block with structured date */
 .cards-events .cards-events-card-date {
   background-color: var(--brand-yellow);
-  padding: 16px 12px;
+  padding: 16px;
   text-align: center;
-  line-height: 1.1;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
 }
 
-.cards-events .cards-events-card-date p {
-  margin: 0;
-  font-weight: 700;
-  font-size: 14px;
-  color: var(--text-color);
+.cards-events .cards-events-date-days {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
   font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-color);
+  text-transform: capitalize;
+}
+
+.cards-events .cards-events-date-nums {
+  font-family: var(--body-font-family);
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-color);
+}
+
+.cards-events .cards-events-date-months {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-color);
+  text-transform: uppercase;
 }
 
 /* Details cell */
@@ -119,34 +147,56 @@
 
 @media (width >= 600px) {
   .cards-events > ul > li {
-    grid-template-columns: 120px 1fr;
-    gap: 24px;
+    grid-template-columns: 160px 1fr;
   }
 
-  .cards-events .cards-events-card-date {
-    padding: 20px 16px;
-  }
-
-  .cards-events .cards-events-card-date p {
-    font-size: 16px;
-  }
-
-  .cards-events .cards-events-card-body h3 {
-    font-size: var(--heading-font-size-l);
+  .cards-events .cards-events-date-nums {
+    font-size: 48px;
   }
 }
 
 @media (width >= 900px) {
-  .cards-events > ul > li {
-    grid-template-columns: 144px 1fr;
+  .cards-events > ul {
+    flex-direction: row;
+    gap: 24px;
   }
 
-  .cards-events .cards-events-card-date p {
-    font-size: 18px;
+  /* stylelint-disable no-descending-specificity */
+  .cards-events > ul > li {
+    flex: 1;
+    grid-template-columns: 1fr;
+    gap: 0;
+    border-bottom: none;
+    border-right: 1px solid #e0e0e0;
+    padding: 0 24px 0 0;
+  }
+
+  .cards-events > ul > li:last-child:not(.cards-events-hidden),
+  .cards-events > ul > li:has(+ .cards-events-hidden) {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .cards-events > ul > li:first-child {
+    padding-left: 0;
+  }
+  /* stylelint-enable no-descending-specificity */
+
+  .cards-events .cards-events-card-date {
+    aspect-ratio: auto;
+    padding: 24px;
+  }
+
+  .cards-events .cards-events-date-nums {
+    font-size: 52px;
+  }
+
+  .cards-events .cards-events-card-body {
+    padding: 16px 0;
   }
 
   .cards-events .cards-events-card-body h3 {
-    font-size: 32px;
+    font-size: var(--heading-font-size-l);
     margin-bottom: 16px;
   }
 }

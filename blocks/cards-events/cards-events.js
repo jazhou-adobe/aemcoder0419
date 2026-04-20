@@ -1,5 +1,56 @@
 const INITIAL_VISIBLE = 3;
 
+function parseDateText(text) {
+  const trimmed = text.trim();
+  // Range: "Mon 13 Apr - Fri 17 Apr"
+  const rangeMatch = trimmed.match(/^(\w+)\s+(\d+)\s+(\w+)\s*-\s*(\w+)\s+(\d+)\s+(\w+)$/);
+  if (rangeMatch) {
+    return {
+      range: true,
+      startDay: rangeMatch[1],
+      startDate: rangeMatch[2],
+      startMonth: rangeMatch[3].toUpperCase(),
+      endDay: rangeMatch[4],
+      endDate: rangeMatch[5],
+      endMonth: rangeMatch[6].toUpperCase(),
+    };
+  }
+  // Single: "Mon 20 Apr"
+  const singleMatch = trimmed.match(/^(\w+)\s+(\d+)\s+(\w+)$/);
+  if (singleMatch) {
+    return {
+      range: false,
+      day: singleMatch[1],
+      date: singleMatch[2],
+      month: singleMatch[3].toUpperCase(),
+    };
+  }
+  return null;
+}
+
+function buildDateBlock(dateDiv) {
+  const text = dateDiv.textContent.trim();
+  const parsed = parseDateText(text);
+  if (!parsed) return;
+
+  dateDiv.textContent = '';
+
+  if (parsed.range) {
+    dateDiv.classList.add('cards-events-date-range');
+    dateDiv.innerHTML = `
+      <div class="cards-events-date-days"><span>${parsed.startDay}</span><span>${parsed.endDay}</span></div>
+      <div class="cards-events-date-nums">${parsed.startDate}-${parsed.endDate}</div>
+      <div class="cards-events-date-months"><span>${parsed.startMonth}</span><span>${parsed.endMonth}</span></div>
+    `;
+  } else {
+    dateDiv.innerHTML = `
+      <div class="cards-events-date-days"><span>${parsed.day}</span></div>
+      <div class="cards-events-date-nums">${parsed.date}</div>
+      <div class="cards-events-date-months"><span>${parsed.month}</span></div>
+    `;
+  }
+}
+
 export default function decorate(block) {
   const ul = document.createElement('ul');
   const rows = [...block.children];
@@ -12,6 +63,7 @@ export default function decorate(block) {
     if (children.length >= 2) {
       children[0].className = 'cards-events-card-date';
       children[1].className = 'cards-events-card-body';
+      buildDateBlock(children[0]);
     } else if (children.length === 1) {
       children[0].className = 'cards-events-card-body';
     }

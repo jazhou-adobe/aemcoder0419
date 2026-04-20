@@ -1,9 +1,5 @@
 /* Columns Strategy - Two-column layout matching UNSW "Progress for All" section */
-.columns-strategy-container {
-  background-color: var(--brand-yellow-light, #fffad9);
-}
-
-.columns-strategy-container .columns-strategy-wrapper {
+.columns-strategy-wrapper {
   max-width: unset;
   padding: 0;
   background-color: var(--brand-yellow-light, #fffad9);

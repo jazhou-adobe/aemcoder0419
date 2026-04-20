@@ -24,6 +24,14 @@ export default function decorate(block) {
     grid.append(card);
   });
 
+  // Remove standalone "Read more" link paragraphs
+  grid.querySelectorAll('.cards-news-card-body p').forEach((p) => {
+    const link = p.querySelector('a');
+    if (link && p.children.length === 1 && link.textContent.trim().toLowerCase() === 'read more') {
+      p.remove();
+    }
+  });
+
   // Optimize images
   grid.querySelectorAll('picture > img').forEach((img) => {
     const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
