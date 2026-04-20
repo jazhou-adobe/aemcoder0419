@@ -5,9 +5,9 @@
 }
 
 .degree-search-inner {
-  max-width: 700px;
+  max-width: 1160px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 24px;
 }
 
 /* Main heading */
@@ -244,8 +244,24 @@
     padding: 64px 0 32px;
   }
 
+  .degree-search-inner {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+  }
+
+  .degree-search-main {
+    flex: 1;
+    min-width: 0;
+  }
+
   .degree-search-main h2 {
     font-size: 42px;
+  }
+
+  .degree-search-journey {
+    flex: 0 0 280px;
+    text-align: left;
   }
 
   .degree-search-journey h3 {

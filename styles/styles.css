@@ -391,6 +391,11 @@ main .section.blue a:any-link {
   color: var(--link-color);
 }
 
+/* Tighten spacing: remove gap between block wrappers and section headings */
+main > .section > [class$="-wrapper"] + .default-content-wrapper h2 {
+  margin-top: 0;
+}
+
 /* Section metadata block should be hidden */
 main .section-metadata {
   display: none;

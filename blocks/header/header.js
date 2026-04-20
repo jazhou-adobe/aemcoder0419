@@ -119,4 +119,14 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
+
+  // Sticky nav on scroll: hide tools row and fix nav to top
+  const scrollThreshold = 50;
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > scrollThreshold) {
+      navWrapper.classList.add('nav-scrolled');
+    } else {
+      navWrapper.classList.remove('nav-scrolled');
+    }
+  });
 }

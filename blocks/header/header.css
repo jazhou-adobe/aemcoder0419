@@ -4,11 +4,19 @@ header {
 }
 
 header .nav-wrapper {
-  width: 100%;
+  width: 100vw;
+  max-width: 100%;
   z-index: 10;
   position: absolute;
   top: 0;
   left: 0;
+  transition: transform 0.3s ease;
+}
+
+/* Scrolled state: fixed nav */
+header .nav-wrapper.nav-scrolled {
+  position: fixed;
+  top: 0;
 }
 
 header nav {
@@ -56,7 +64,7 @@ header nav .nav-tools {
   align-items: center;
   gap: 24px;
   padding: 12px 32px;
-  background: rgb(0 0 0 / 50%);
+  background: transparent;
 }
 
 header nav .nav-tools .default-content-wrapper {
@@ -258,6 +266,15 @@ header nav .nav-social svg {
 
 header nav .nav-social a:hover svg {
   fill: var(--brand-yellow, #ffdc00);
+}
+
+/* Scrolled state: hide tools and social rows */
+header .nav-wrapper.nav-scrolled .nav-tools {
+  display: none !important;
+}
+
+header .nav-wrapper.nav-scrolled .nav-social {
+  display: none !important;
 }
 
 /* ============================

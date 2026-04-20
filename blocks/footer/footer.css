@@ -24,7 +24,7 @@ footer a:hover {
   color: var(--brand-yellow, #ffdc00);
 }
 
-/* 1. Logo section */
+/* 1. Logo + address section */
 footer .section:first-child {
   padding-bottom: 24px;
   border-bottom: 1px solid rgb(255 255 255 / 15%);
@@ -52,6 +52,7 @@ footer .section:nth-child(2) > .default-content-wrapper > ul > li {
   margin: 0;
 }
 
+/* stylelint-disable no-descending-specificity */
 footer .section:nth-child(2) > .default-content-wrapper > ul > li > p > strong {
   display: block;
   margin-bottom: 12px;
@@ -113,43 +114,114 @@ footer .section:nth-child(3) img:hover {
   opacity: 1;
 }
 
-/* 4. Acknowledgement of Country */
+/* 4. Acknowledgement of Country - yellow background */
 footer .section:nth-child(4) {
-  padding-top: 24px;
-  padding-bottom: 16px;
-  border-top: 1px solid rgb(255 255 255 / 15%);
+  background-color: var(--brand-yellow, #ffdc00);
+  color: var(--brand-dark, #181716);
+  padding: 40px 0;
+  margin: 24px -24px 0;
+  width: calc(100% + 48px);
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
+footer .section:nth-child(4) > .default-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+footer .section:nth-child(4) .footer-ack-layout {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+footer .section:nth-child(4) .footer-ack-flags {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
 footer .section:nth-child(4) img {
-  height: 24px;
+  height: 72px;
   width: auto;
-  margin-right: 8px;
-  vertical-align: middle;
+  display: block;
 }
 
 footer .section:nth-child(4) h2 {
-  color: var(--background-color, #fff);
+  color: var(--brand-dark, #181716);
   font-family: var(--heading-font-family);
-  font-size: var(--body-font-size-m);
+  font-size: var(--heading-font-size-s);
   font-weight: 700;
-  margin-top: 16px;
+  margin-top: 0;
   margin-bottom: 8px;
 }
 
 footer .section:nth-child(4) p {
-  color: rgb(255 255 255 / 70%);
+  color: var(--brand-dark, #181716);
   line-height: 1.6;
   margin-bottom: 8px;
-  font-size: var(--body-font-size-xs);
+  font-size: var(--body-font-size-s);
 }
 
-/* stylelint-disable no-descending-specificity */
+footer .section:nth-child(4) a:any-link {
+  color: var(--brand-dark, #181716);
+  text-decoration: underline;
+}
 
-/* 5. Address and legal section */
+footer .section:nth-child(4) a:hover {
+  color: #333;
+}
+
+/* 5. Social + Legal section */
 footer .section:nth-child(5) {
   padding-top: 24px;
   border-top: 1px solid rgb(255 255 255 / 15%);
+}
+
+footer .section:nth-child(5) .footer-social {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+footer .section:nth-child(5) .footer-social-label {
+  font-size: var(--body-font-size-s);
+  color: var(--background-color, #fff);
+  margin-right: 4px;
+}
+
+footer .section:nth-child(5) .footer-social a:any-link {
+  display: flex;
+  align-items: center;
+  color: var(--background-color, #fff);
+}
+
+footer .section:nth-child(5) .footer-social svg {
+  width: 22px;
+  height: 22px;
+  fill: #fff;
+}
+
+footer .section:nth-child(5) .footer-social a:hover svg {
+  fill: var(--brand-yellow, #ffdc00);
+}
+
+footer .section:nth-child(5) .footer-legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-bottom: 20px;
+}
+
+footer .section:nth-child(5) .footer-legal-links a:any-link {
+  color: rgb(255 255 255 / 60%);
+  font-size: var(--body-font-size-xs);
+}
+
+footer .section:nth-child(5) .footer-legal-links a:hover {
+  color: var(--brand-yellow, #ffdc00);
 }
 
 footer .section:nth-child(5) p {
@@ -167,3 +239,14 @@ footer .section:nth-child(5) a:hover {
 }
 
 /* stylelint-enable no-descending-specificity */
+
+@media (width >= 900px) {
+  footer .section:nth-child(4) {
+    margin: 24px -32px 0;
+    width: calc(100% + 64px);
+  }
+
+  footer .section:nth-child(4) > .default-content-wrapper {
+    padding: 0 32px;
+  }
+}
