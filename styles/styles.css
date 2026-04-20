@@ -371,6 +371,26 @@ main .section.yellow {
   padding: var(--spacing-l) 0;
 }
 
+main .section.blue {
+  background-color: #e8edf5;
+  color: var(--text-color);
+  margin: 0;
+  padding: var(--spacing-l) 0;
+}
+
+main .section.blue h1,
+main .section.blue h2,
+main .section.blue h3,
+main .section.blue h4,
+main .section.blue h5,
+main .section.blue h6 {
+  color: var(--text-color);
+}
+
+main .section.blue a:any-link {
+  color: var(--link-color);
+}
+
 /* Section metadata block should be hidden */
 main .section-metadata {
   display: none;

@@ -122,7 +122,7 @@ export default function decorate(block) {
       <button type="button" class="slide-next" aria-label="${placeholders.nextSlide || 'Next Slide'}"></button>
     `;
 
-    container.append(slideNavButtons);
+    slideIndicatorsNav.append(slideNavButtons);
   }
 
   rows.forEach((row, idx) => {

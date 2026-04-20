@@ -1,4 +1,9 @@
-/* Columns Strategy - Two-column layout, image left, text right */
+/* Columns Strategy - Two-column layout matching UNSW "Progress for All" section */
+.columns-strategy-wrapper {
+  background-color: #faf6eb;
+  padding: var(--spacing-l) 0;
+}
+
 .columns-strategy > div {
   display: flex;
   flex-direction: column;
@@ -16,6 +21,8 @@
 
 .columns-strategy > div > .columns-strategy-img-col {
   order: 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .columns-strategy > div > .columns-strategy-img-col img {
@@ -23,14 +30,16 @@
   object-fit: cover;
   width: 100%;
   height: 100%;
+  border-radius: 0 0 48px;
 }
 
-.columns-strategy h2,
-.columns-strategy h3 {
+.columns-strategy h2 {
   font-family: var(--heading-font-family);
   font-weight: 700;
+  font-size: var(--heading-font-size-xl);
   color: var(--text-color);
   margin-top: 0;
+  margin-bottom: var(--spacing-s);
 }
 
 .columns-strategy p {
@@ -39,17 +48,59 @@
   color: var(--text-color);
 }
 
-.columns-strategy a.button.primary {
-  background-color: var(--brand-yellow);
-  border-color: var(--brand-yellow);
-  color: var(--brand-navy);
-  border-radius: 0;
+/* CTA buttons - UNSW style */
+.columns-strategy-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   font-family: var(--mono-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding: 10px 16px;
+  text-decoration: none;
+  border: 2px solid #000;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Yellow background section variant */
-.section.yellow .columns-strategy > div > div:not(.columns-strategy-img-col) {
-  background-color: var(--brand-yellow-light);
+/* Primary CTA - dark filled */
+.columns-strategy-cta-primary {
+  background-color: var(--brand-navy, #1a1e2b);
+  color: #fff;
+  border-color: #000;
+}
+
+.columns-strategy-cta-primary:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Secondary CTA - outlined */
+.columns-strategy-cta-secondary {
+  background-color: #fff;
+  color: #000;
+  border-color: #000;
+}
+
+.columns-strategy-cta-secondary:hover {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.columns-strategy-cta-wrapper {
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Add arrow chevron after CTA links */
+.columns-strategy-cta::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentcolor;
+  border-top: 2px solid currentcolor;
+  transform: rotate(45deg);
+  flex-shrink: 0;
 }
 
 @media (width >= 900px) {
@@ -70,5 +121,9 @@
 
   .columns-strategy > div > .columns-strategy-img-col {
     flex: 1;
+  }
+
+  .columns-strategy h2 {
+    font-size: var(--heading-font-size-xxl);
   }
 }

@@ -1,0 +1,58 @@
+/* Button Row - 3 differently colored CTA buttons matching UNSW design */
+.button-row {
+  text-align: center;
+}
+
+.button-row-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Base button style */
+.button-row-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono-font-family);
+  font-size: 16px;
+  padding: 10px 16px;
+  border: 2px solid var(--brand-navy);
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+/* Primary - Yellow */
+.button-row-btn.button-row-primary {
+  background-color: var(--brand-yellow);
+  color: var(--brand-navy);
+  border-color: var(--brand-navy);
+}
+
+.button-row-btn.button-row-primary:hover {
+  background-color: #e6c600;
+}
+
+/* Light - White */
+.button-row-btn.button-row-light {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-color: var(--text-color);
+}
+
+.button-row-btn.button-row-light:hover {
+  background-color: var(--light-color);
+}
+
+/* Dark - Navy */
+.button-row-btn.button-row-dark {
+  background-color: var(--brand-navy);
+  color: var(--background-color);
+  border-color: var(--text-color);
+}
+
+.button-row-btn.button-row-dark:hover {
+  background-color: #333;
+}

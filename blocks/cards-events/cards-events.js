@@ -1,21 +1,43 @@
-import { createOptimizedPicture } from '../../scripts/aem.js';
+const INITIAL_VISIBLE = 3;
 
 export default function decorate(block) {
-  /* change to ul, li */
   const ul = document.createElement('ul');
-  [...block.children].forEach((row) => {
+  const rows = [...block.children];
+  block.textContent = '';
+
+  rows.forEach((row, index) => {
     const li = document.createElement('li');
     while (row.firstElementChild) li.append(row.firstElementChild);
-    [...li.children].forEach((div) => {
-      if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-events-card-image';
-      else div.className = 'cards-events-card-body';
-    });
+    const children = [...li.children];
+    if (children.length >= 2) {
+      children[0].className = 'cards-events-card-date';
+      children[1].className = 'cards-events-card-body';
+    } else if (children.length === 1) {
+      children[0].className = 'cards-events-card-body';
+    }
+
+    // Hide items beyond the initial visible count
+    if (index >= INITIAL_VISIBLE) {
+      li.classList.add('cards-events-hidden');
+    }
+
     ul.append(li);
   });
-  ul.querySelectorAll('picture > img').forEach((img) => {
-    const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
-    img.closest('picture').replaceWith(optimizedPic);
-  });
-  block.textContent = '';
+
   block.append(ul);
+
+  // Add "Show more" button if there are hidden items
+  if (rows.length > INITIAL_VISIBLE) {
+    const showMore = document.createElement('button');
+    showMore.type = 'button';
+    showMore.className = 'cards-events-show-more';
+    showMore.innerHTML = '<span>Show more</span>';
+    showMore.addEventListener('click', () => {
+      ul.querySelectorAll('.cards-events-hidden').forEach((li) => {
+        li.classList.remove('cards-events-hidden');
+      });
+      showMore.remove();
+    });
+    block.append(showMore);
+  }
 }

@@ -1,103 +1,198 @@
-/* Degree Search - matches UNSW degree search section design */
-.degree-search-container {
-  background-color: var(--background-color);
-}
-
+/* Degree Search Block - matches UNSW homepage degree search section */
 .degree-search {
   text-align: center;
-  padding: var(--spacing-l) 0 var(--spacing-s);
+  padding: 48px 0 24px;
 }
 
 .degree-search-inner {
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
+  padding: 0 16px;
 }
 
 /* Main heading */
 .degree-search-main h2 {
   font-family: var(--heading-font-family);
   font-weight: 700;
-  font-size: var(--heading-font-size-xl);
+  font-size: 32px;
+  line-height: 1.5;
   color: var(--text-color);
-  margin-top: 0;
-  margin-bottom: var(--spacing-xs);
+  margin: 0 0 32px;
 }
 
-.degree-search-description {
-  color: var(--text-color);
-  font-size: var(--body-font-size-m);
-  line-height: 1.75;
-  margin-bottom: var(--spacing-m);
-}
-
-/* Search bar - mimics original UNSW degree search input */
-.degree-search-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/* Light blue search area container */
+.degree-search-area {
   background-color: #e0f2fb;
   border: 1px solid #e0e0e0;
   border-radius: 24px;
-  padding: 18px 16px 18px 24px;
-  box-shadow: 0 4px 30px rgb(0 0 0 / 5%);
-  text-decoration: none;
-  transition: box-shadow 0.2s ease, border-color 0.2s ease;
-  margin-bottom: var(--spacing-s);
+  padding: 25px 16px 15px;
+  margin-bottom: 48px;
 }
 
-.degree-search-bar:hover {
-  box-shadow: 0 4px 30px rgb(0 0 0 / 12%);
-  border-color: #ccc;
+/* Search bar + filters row */
+.degree-search-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
 }
 
-.degree-search-bar-text {
-  font-family: var(--heading-font-family);
-  font-size: 20px;
-  color: #999;
-  text-align: left;
-}
-
-/* Search icon - dark circle with magnifying glass */
-.degree-search-bar-icon {
-  position: relative;
-  display: block;
-  width: 40px;
-  height: 40px;
-  background-color: var(--brand-dark);
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.degree-search-bar-icon::before {
-  content: '';
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 14px;
-  height: 14px;
-  border: 2px solid #fff;
-  border-radius: 50%;
-}
-
-.degree-search-bar-icon::after {
-  content: '';
-  position: absolute;
-  top: 24px;
-  left: 23px;
-  width: 2px;
-  height: 8px;
+/* Search form (white pill) */
+.degree-search-bar {
+  display: flex;
+  align-items: center;
+  flex: 1;
   background: #fff;
-  transform: rotate(-45deg);
-  transform-origin: top center;
+  border: 1px solid #e0e0e0;
+  border-radius: 40px;
+  padding: 4px 6px 4px 20px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* View all link - dark color matching original */
+.degree-search-bar:focus-within {
+  border-color: #999;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
+}
+
+/* Search input */
+.degree-search-bar input[type="search"] {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  color: var(--text-color);
+  padding: 10px 8px 10px 0;
+  min-width: 0;
+}
+
+.degree-search-bar input[type="search"]::placeholder {
+  color: #999;
+}
+
+/* Remove default search input styling */
+.degree-search-bar input[type="search"]::-webkit-search-cancel-button,
+.degree-search-bar input[type="search"]::-webkit-search-decoration {
+  appearance: none;
+}
+
+/* Submit button */
+.degree-search-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: none;
+  background: transparent;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.degree-search-submit:hover {
+  background-color: #f0f0f0;
+}
+
+/* Filters button */
+.degree-search-filters {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 40px;
+  padding: 10px 20px;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-color);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.degree-search-filters:hover {
+  border-color: #999;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
+}
+
+/* Toggle row: International toggle + View all link */
+.degree-search-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4px;
+}
+
+/* International toggle group */
+.degree-search-toggle-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.degree-search-toggle-label {
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+/* Toggle switch */
+.degree-search-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 44px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.degree-search-toggle-track {
+  display: block;
+  width: 44px;
+  height: 24px;
+  background-color: #ccc;
+  border-radius: 12px;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.degree-search-toggle.is-on .degree-search-toggle-track {
+  background-color: var(--brand-yellow, #ffdc00);
+}
+
+.degree-search-toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 20%);
+  transition: transform 0.2s ease;
+}
+
+.degree-search-toggle.is-on .degree-search-toggle-thumb {
+  transform: translateX(20px);
+}
+
+/* View all link */
 .degree-search-view-all {
-  display: inline-block;
+  font-family: var(--heading-font-family);
+  font-size: 16px;
+  font-weight: 300;
   color: #333;
-  font-size: var(--body-font-size-m);
   text-decoration: underline;
-  margin-bottom: var(--spacing-l);
+  text-underline-offset: 3px;
 }
 
 .degree-search-view-all:hover {
@@ -106,49 +201,58 @@
 
 /* Journey sub-section */
 .degree-search-journey {
-  padding-top: var(--spacing-m);
-  border-top: 1px solid #eee;
+  padding-top: 40px;
 }
 
 .degree-search-journey h3 {
   font-family: var(--heading-font-family);
   font-weight: 700;
-  font-size: var(--heading-font-size-l);
+  font-size: 24px;
+  line-height: 1.5;
   color: var(--text-color);
-  margin-top: 0;
-  margin-bottom: var(--spacing-xs);
-}
-
-.degree-search-journey p {
-  color: var(--text-color);
-  font-size: var(--body-font-size-m);
-  line-height: 1.75;
-  margin-bottom: var(--spacing-s);
+  margin: 0 0 24px;
 }
 
 /* Apply now CTA button */
 .degree-search-cta {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
   font-family: var(--mono-font-family);
-  font-size: var(--button-font-size);
-  padding: var(--button-padding);
-  background-color: var(--brand-yellow);
-  color: var(--brand-navy);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding: 14px 16px;
+  background-color: var(--brand-yellow, #ffdc00);
+  color: var(--brand-navy, #1a1e2b);
   text-decoration: none;
-  border-radius: 0;
-  transition: var(--button-transition);
+  border: 2px solid transparent;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .degree-search-cta:hover {
   background-color: #e6c600;
 }
 
+.degree-search-cta svg {
+  flex-shrink: 0;
+}
+
+/* Desktop */
 @media (width >= 900px) {
-  .degree-search-bar-text {
-    font-size: 22px;
+  .degree-search {
+    padding: 64px 0 32px;
   }
 
   .degree-search-main h2 {
-    font-size: var(--heading-font-size-xxl);
+    font-size: 42px;
+  }
+
+  .degree-search-journey h3 {
+    font-size: 28px;
+  }
+
+  .degree-search-bar input[type="search"] {
+    font-size: 18px;
   }
 }

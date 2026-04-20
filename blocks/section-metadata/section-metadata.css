@@ -1,0 +1,4 @@
+/* Section Metadata - hidden block that applies styles to parent section */
+.section-metadata {
+  display: none;
+}
